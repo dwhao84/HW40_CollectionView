@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		D304F0112B2DA5160066DD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304F0102B2DA5160066DD56 /* AppDelegate.swift */; };
 		D304F0132B2DA5160066DD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304F0122B2DA5160066DD56 /* SceneDelegate.swift */; };
-		D304F0152B2DA5160066DD56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304F0142B2DA5160066DD56 /* ViewController.swift */; };
 		D304F0182B2DA5160066DD56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D304F0162B2DA5160066DD56 /* Main.storyboard */; };
 		D304F01A2B2DA5200066DD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D304F0192B2DA5200066DD56 /* Assets.xcassets */; };
 		D304F01D2B2DA5200066DD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D304F01B2B2DA5200066DD56 /* LaunchScreen.storyboard */; };
 		D304F0282B2DA5200066DD56 /* HW40_CollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304F0272B2DA5200066DD56 /* HW40_CollectionViewTests.swift */; };
 		D304F0322B2DA5210066DD56 /* HW40_CollectionViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304F0312B2DA5210066DD56 /* HW40_CollectionViewUITests.swift */; };
 		D304F0342B2DA5210066DD56 /* HW40_CollectionViewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304F0332B2DA5210066DD56 /* HW40_CollectionViewUITestsLaunchTests.swift */; };
+		D304F0412B2DACEB0066DD56 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304F0402B2DACEB0066DD56 /* Data.swift */; };
+		D304F0452B2DCB760066DD56 /* TaiwanSceneCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304F0442B2DCB760066DD56 /* TaiwanSceneCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		D304F00D2B2DA5160066DD56 /* HW40_CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW40_CollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D304F0102B2DA5160066DD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D304F0122B2DA5160066DD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D304F0142B2DA5160066DD56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D304F0172B2DA5160066DD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D304F0192B2DA5200066DD56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D304F01C2B2DA5200066DD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		D304F02D2B2DA5210066DD56 /* HW40_CollectionViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HW40_CollectionViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D304F0312B2DA5210066DD56 /* HW40_CollectionViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW40_CollectionViewUITests.swift; sourceTree = "<group>"; };
 		D304F0332B2DA5210066DD56 /* HW40_CollectionViewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW40_CollectionViewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D304F0402B2DACEB0066DD56 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		D304F0442B2DCB760066DD56 /* TaiwanSceneCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaiwanSceneCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +101,10 @@
 		D304F00F2B2DA5160066DD56 /* HW40_CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				D304F0102B2DA5160066DD56 /* AppDelegate.swift */,
-				D304F0122B2DA5160066DD56 /* SceneDelegate.swift */,
-				D304F0142B2DA5160066DD56 /* ViewController.swift */,
+				D304F0482B2DCC2C0066DD56 /* Supporting Files */,
 				D304F0162B2DA5160066DD56 /* Main.storyboard */,
-				D304F0192B2DA5200066DD56 /* Assets.xcassets */,
-				D304F01B2B2DA5200066DD56 /* LaunchScreen.storyboard */,
+				D304F0462B2DCBFC0066DD56 /* ViewController */,
+				D304F0472B2DCC0A0066DD56 /* Data */,
 				D304F01E2B2DA5200066DD56 /* Info.plist */,
 			);
 			path = HW40_CollectionView;
@@ -125,6 +125,33 @@
 				D304F0332B2DA5210066DD56 /* HW40_CollectionViewUITestsLaunchTests.swift */,
 			);
 			path = HW40_CollectionViewUITests;
+			sourceTree = "<group>";
+		};
+		D304F0462B2DCBFC0066DD56 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D304F0442B2DCB760066DD56 /* TaiwanSceneCollectionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D304F0472B2DCC0A0066DD56 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D304F0402B2DACEB0066DD56 /* Data.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D304F0482B2DCC2C0066DD56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D304F0102B2DA5160066DD56 /* AppDelegate.swift */,
+				D304F0122B2DA5160066DD56 /* SceneDelegate.swift */,
+				D304F0192B2DA5200066DD56 /* Assets.xcassets */,
+				D304F01B2B2DA5200066DD56 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D304F0152B2DA5160066DD56 /* ViewController.swift in Sources */,
 				D304F0112B2DA5160066DD56 /* AppDelegate.swift in Sources */,
 				D304F0132B2DA5160066DD56 /* SceneDelegate.swift in Sources */,
+				D304F0452B2DCB760066DD56 /* TaiwanSceneCollectionViewController.swift in Sources */,
+				D304F0412B2DACEB0066DD56 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
