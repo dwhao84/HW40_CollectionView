@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Data {
+struct TaiwanScenePhoto {
     let imageViewName: String
-    let locationURL:   String
+//    let locationURL:   String
 }
 
 
