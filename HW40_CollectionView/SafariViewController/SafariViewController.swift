@@ -10,29 +10,28 @@ import SafariServices
 
 class SafariViewController: UIViewController {
 
-    var urlAddress: String?
+    var urlAddress: URL = URL(fileURLWithPath: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showUrl()
+        print("Into the SafariViewController")
+
+        presentSafari()
 
     }
 
-    func showUrl () {
-        if let url = URL(string: urlAddress ?? "") {
-            UIApplication.shared.canOpenURL(url)
-            print("Open URL Successful")
-        } else {
-            print("Can't open URL")
-        }
+    func presentSafari () {
+        let safariVC = SFSafariViewController(url: urlAddress)
+        present(safariVC, animated: true)
+        safariVC.delegate = self
     }
+
 }
 
 extension SafariViewController: SFSafariViewControllerDelegate {
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         print("safariViewControllerDidFinish")
-
         dismiss(animated: true)
     }
 

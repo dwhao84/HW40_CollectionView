@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct TaiwanScenePhoto {
-    let imageViewName: String
+struct Pics {
+    let pics: String
 //    let locationURL:   String
 }
 
