@@ -9,6 +9,10 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
 
+    static let reuseIdentifier = "Cell"
+
     @IBOutlet weak var imageView: UIImageView!
+
     
+
 }

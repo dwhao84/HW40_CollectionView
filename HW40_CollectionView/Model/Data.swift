@@ -8,7 +8,7 @@
 import Foundation
 
 struct Pics {
-    let pics: String
+    let image: String
 //    let locationURL:   String
 }
 
