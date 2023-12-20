@@ -39,11 +39,10 @@ class SafariViewController: UIViewController, WKUIDelegate {
         let myRequest = URLRequest(url: myURL)
         webView.load(myRequest)
     }
-
-
 }
 
-extension SafariViewController: UIWebViewDelegate {
-
+extension SafariViewController: WKNavigationDelegate {
+    func backForwardGesture () {
+        webView.allowsBackForwardNavigationGestures = true
+    }
 }
-
