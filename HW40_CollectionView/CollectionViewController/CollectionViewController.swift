@@ -18,8 +18,8 @@ class CollectionViewController: UIViewController {
 
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 128, height: 128)
-        collectionView.collectionViewLayout = layout
 
+        collectionView.collectionViewLayout = layout
         collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
 
         collectionView.delegate = self
@@ -46,8 +46,9 @@ class CollectionViewController: UIViewController {
             images.append(UIImage(named: "pic18")!)
             images.append(UIImage(named: "pic19")!)
             images.append(UIImage(named: "pic20")!)
-            images.append(UIImage(named: "pic20")!)
+            images.append(UIImage(named: "pic21")!)
         }
+
     }
 }
 
@@ -55,42 +56,45 @@ extension CollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("You tapped me")
+        print(indexPath.row)
     }
 }
 
 extension CollectionViewController: UICollectionViewDataSource {
-
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 21
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as? MyCollectionViewCell else {
+            fatalError("Failed to dequeue MyCollectionViewCell")
+        }
 
-        cell.configure(with: UIImage(named: "pic01")!)
-
+        let image = self.images[indexPath.row]
+        cell.configure(with: image)
+        cell.locationName.text = placesAndUrl[indexPath.row].location
+        print(placesAndUrl[indexPath.row].location)
         return cell
     }
 }
 
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
-
     // sizeForItemAt
     // This means how many item will show in collectionView.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 1.34 this value means to minus the space after we divide the three images space.
-        let size = (self.view.frame.width / 3) - 1.34
-        return CGSize(width: size, height: size)
+        let widthSize = (self.view.frame.width / 3) - 1.34
+        let heightSize = (self.view.frame.height / 5)
+        return CGSize(width: widthSize, height: heightSize)
     }
 
-    // minimumLineSpacingForSectionAt
+    // vertical spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
 
-    // minimumInteritemSpacingForSectionAt
+    // horizontal spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
