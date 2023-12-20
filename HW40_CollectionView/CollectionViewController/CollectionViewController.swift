@@ -64,7 +64,7 @@ extension CollectionViewController: UICollectionViewDelegate {
         if let safariVC = storyboard?.instantiateViewController(identifier: "SafariViewController") as? SafariViewController {
             safariVC.navigationBarTitle = placesAndUrl[indexPath.row].location
             safariVC.urlString = placesAndUrl[indexPath.row].locationURL
-            safariVC.modalPresentationStyle = .fullScreen
+            safariVC.modalPresentationStyle = .popover
             present(safariVC, animated: true)
         }
     }

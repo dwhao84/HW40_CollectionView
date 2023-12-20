@@ -28,6 +28,10 @@ class SafariViewController: UIViewController, WKUIDelegate {
 
         print("Into the SafariViewController")
         loadURL()
+
+        UINavigationBar.appearance().isTranslucent = true
+        let appearance = UINavigationBarAppearance()
+        UINavigationBar.appearance().standardAppearance = appearance
     }
 
     func loadURL () {

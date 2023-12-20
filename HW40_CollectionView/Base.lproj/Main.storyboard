@@ -96,10 +96,10 @@
                         <viewLayoutGuide key="safeArea" id="CcW-HJ-10a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kXh-lX-EeS" firstAttribute="bottom" secondItem="CcW-HJ-10a" secondAttribute="bottom" id="6mr-Q4-pWM"/>
-                            <constraint firstItem="kXh-lX-EeS" firstAttribute="leading" secondItem="CcW-HJ-10a" secondAttribute="leading" id="OuV-Lg-ilm"/>
-                            <constraint firstItem="kXh-lX-EeS" firstAttribute="trailing" secondItem="CcW-HJ-10a" secondAttribute="trailing" id="uOp-F6-U5R"/>
-                            <constraint firstItem="kXh-lX-EeS" firstAttribute="top" secondItem="CcW-HJ-10a" secondAttribute="top" id="xQK-CE-oNc"/>
+                            <constraint firstItem="kXh-lX-EeS" firstAttribute="leading" secondItem="CcW-HJ-10a" secondAttribute="leading" id="FHe-jO-jyw"/>
+                            <constraint firstItem="kXh-lX-EeS" firstAttribute="trailing" secondItem="CcW-HJ-10a" secondAttribute="trailing" id="NPV-2j-Sz8"/>
+                            <constraint firstItem="kXh-lX-EeS" firstAttribute="top" secondItem="CcW-HJ-10a" secondAttribute="top" id="Nw5-8u-eiG"/>
+                            <constraint firstItem="kXh-lX-EeS" firstAttribute="bottom" secondItem="CcW-HJ-10a" secondAttribute="bottom" id="zOs-fB-ipd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vHq-Ce-1zS"/>
