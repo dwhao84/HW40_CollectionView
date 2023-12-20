@@ -6,35 +6,40 @@
 //
 
 import UIKit
-import SafariServices
+import WebKit
 
-class SafariViewController: UIViewController {
 
-    var urlAddress: URL = URL(fileURLWithPath: "")
+class SafariViewController: UIViewController, WKUIDelegate {
+
+    @IBOutlet weak var webView: WKWebView!
+
+    var urlString: String = ""
+    var navigationBarTitle: String = ""
+
+    override func loadView () {
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        view = webView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("Into the SafariViewController")
-
-        presentSafari()
-
+        loadURL()
     }
 
-    func presentSafari () {
-        let safariVC = SFSafariViewController(url: urlAddress)
-        present(safariVC, animated: true)
-        safariVC.delegate = self
+    func loadURL () {
+        let myURL: URL = URL(string: urlString)!
+        let myRequest = URLRequest(url: myURL)
+        webView.load(myRequest)
     }
+
 
 }
 
-extension SafariViewController: SFSafariViewControllerDelegate {
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        print("safariViewControllerDidFinish")
-        dismiss(animated: true)
-    }
-
+extension SafariViewController: UIWebViewDelegate {
 
 }
 

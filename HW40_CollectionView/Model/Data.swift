@@ -36,7 +36,7 @@ struct Location {
        Location(location: "Maokong Gondola 貓空纜車", locationURL: "https://english.gondola.taipei"),
        Location(location: "Fo Guang Shan Buddha Museum 佛光山佛陀紀念館", locationURL: "https://www.fgsbmc.org.tw/en/index.aspx"),
        Location(location: "Jiufen 九份", locationURL: "https://eng-taiwan-net-tw.translate.goog/m1.aspx?sNo=0002091&id=290&_x_tr_sl=en&_x_tr_tl=zh-Hant&_x_tr_hl=zh-Hant&_x_tr_pto=tc"),
-       Location(location: "Bustling Kaohsiung Harbor", locationURL: "https://kh.twport.com.tw/en/cp.aspx?n=7A8A095986A78CE5"),
-       Location(location: "Ximending", locationURL: "https://www.travel.taipei/zh-tw/attraction/details/1572"),
-       Location(location: "Yehliu Geopark", locationURL: "https://eng-taiwan-net-tw.translate.goog/m1.aspx?sNo=0002091&id=155&_x_tr_sl=en&_x_tr_tl=zh-Hant&_x")
+       Location(location: "Bustling Kaohsiung Harbor 高雄港", locationURL: "https://kh.twport.com.tw/en/cp.aspx?n=7A8A095986A78CE5"),
+       Location(location: "Ximending 西門町", locationURL: "https://www.travel.taipei/zh-tw/attraction/details/1572"),
+       Location(location: "Yehliu Geopark 野柳", locationURL: "https://eng-taiwan-net-tw.translate.goog/m1.aspx?sNo=0002091&id=155&_x_tr_sl=en&_x_tr_tl=zh-Hant&_x")
     ]

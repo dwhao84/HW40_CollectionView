@@ -17,13 +17,16 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
 
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 128, height: 128)
+        layout.itemSize = CGSize(width: 200, height: 250)
 
         collectionView.collectionViewLayout = layout
         collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
 
         collectionView.delegate = self
         collectionView.dataSource = self
+
+        self.navigationItem.title = "Taiwan Scene"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
 
         for _ in 0...20 {
             images.append(UIImage(named: "pic01")!)
@@ -57,6 +60,13 @@ extension CollectionViewController: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("You tapped me")
         print(indexPath.row)
+        
+        if let safariVC = storyboard?.instantiateViewController(identifier: "SafariViewController") as? SafariViewController {
+            safariVC.navigationBarTitle = placesAndUrl[indexPath.row].location
+            safariVC.urlString = placesAndUrl[indexPath.row].locationURL
+            safariVC.modalPresentationStyle = .fullScreen
+            present(safariVC, animated: true)
+        }
     }
 }
 
@@ -74,6 +84,7 @@ extension CollectionViewController: UICollectionViewDataSource {
         let image = self.images[indexPath.row]
         cell.configure(with: image)
         cell.locationName.text = placesAndUrl[indexPath.row].location
+
         print(placesAndUrl[indexPath.row].location)
         return cell
     }
@@ -84,7 +95,7 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     // This means how many item will show in collectionView.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 1.34 this value means to minus the space after we divide the three images space.
-        let widthSize = (self.view.frame.width / 3) - 1.34
+        let widthSize = (self.view.frame.width / 3) - 1.4
         let heightSize = (self.view.frame.height / 5)
         return CGSize(width: widthSize, height: heightSize)
     }

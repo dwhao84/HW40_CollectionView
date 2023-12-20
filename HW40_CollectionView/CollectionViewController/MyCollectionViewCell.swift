@@ -21,7 +21,7 @@ class MyCollectionViewCell: UICollectionViewCell {
         locationName.textColor = .darkGray
         locationName.textAlignment = .center
         locationName.adjustsFontSizeToFitWidth = true
-        locationName.font = UIFont.systemFont(ofSize: 12)
+        locationName.font = UIFont.systemFont(ofSize: 10)
 
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 5
