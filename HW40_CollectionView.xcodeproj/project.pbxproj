@@ -57,6 +57,7 @@
 		D326E4312B2F5FE80079AADA /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		D3820E612B31D2CE00254C1D /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3820E622B31D2CE00254C1D /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		D3820F032B3691B200254C1D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +108,7 @@
 		D304F00F2B2DA5160066DD56 /* HW40_CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				D3820F032B3691B200254C1D /* README.md */,
 				D304F0482B2DCC2C0066DD56 /* Supporting Files */,
 				D304F0162B2DA5160066DD56 /* Main.storyboard */,
 				D326E42E2B2F07860079AADA /* SafariViewController */,
