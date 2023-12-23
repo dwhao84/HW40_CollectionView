@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class CollectionViewController: UIViewController {
+class CollectionViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -16,8 +17,11 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let itemSpace:   Double = 4
+        let columuCount: Double = 3
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 200, height: 250)
+        let width = floor(collectionView.bounds.width - itemSpace * (columuCount - 1) / columuCount )
+        layout.itemSize                = CGSize(width: width, height: width)
 
         collectionView.collectionViewLayout = layout
         collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
@@ -51,7 +55,6 @@ class CollectionViewController: UIViewController {
             images.append(UIImage(named: "pic20")!)
             images.append(UIImage(named: "pic21")!)
         }
-
     }
 }
 
@@ -60,12 +63,11 @@ extension CollectionViewController: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("You tapped me")
         print(indexPath.row)
-        
-        if let safariVC = storyboard?.instantiateViewController(identifier: "SafariViewController") as? SafariViewController {
-            safariVC.navigationBarTitle = placesAndUrl[indexPath.row].location
-            safariVC.urlString = placesAndUrl[indexPath.row].locationURL
-            safariVC.modalPresentationStyle = .popover
-            present(safariVC, animated: true)
+
+        if let url = URL(string: placesAndUrl[indexPath.row].locationURL ) {
+          let safari = SFSafariViewController(url: url)
+          safari.delegate = self
+          present(safari, animated: true)
         }
     }
 }
