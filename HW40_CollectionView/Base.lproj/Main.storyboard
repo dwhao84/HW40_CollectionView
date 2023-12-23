@@ -69,28 +69,11 @@
                     <navigationItem key="navigationItem" id="woT-nw-71S"/>
                     <connections>
                         <outlet property="collectionView" destination="gZm-RD-9IY" id="EJb-zU-Yu3"/>
-                        <segue destination="Etc-TR-qKa" kind="show" destinationCreationSelector="chooseThePhoto:" id="n2p-ek-wjs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KrL-Y2-sHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2015.8878504672896" y="-20.086393088552917"/>
-        </scene>
-        <!--Safari View Controller-->
-        <scene sceneID="NDE-aH-CoQ">
-            <objects>
-                <viewController storyboardIdentifier="SafariViewController" id="Etc-TR-qKa" customClass="SafariViewController" customModule="HW40_CollectionView" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3gn-hI-9QI">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="CcW-HJ-10a"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vHq-Ce-1zS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zie-Xd-IYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2720" y="-20"/>
+            <point key="canvasLocation" x="1933" y="-20"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VIg-Vi-1CY">
