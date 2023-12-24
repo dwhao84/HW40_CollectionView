@@ -18,7 +18,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
 
-        let imageViewWidth: CGFloat = 20.0
+        let imageViewWidth: CGFloat = 75.0
 
         imageView.layer.cornerRadius = imageViewWidth
         imageView.clipsToBounds      = true
@@ -30,7 +30,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
         locationNameLabel.textColor                 = .darkGray
         locationNameLabel.adjustsFontSizeToFitWidth = true
         locationNameLabel.textAlignment             = .center
-        locationNameLabel.font                      = UIFont.systemFont(ofSize: 20)
+        locationNameLabel.font                      = UIFont.systemFont(ofSize: 15)
 
     }
 

@@ -68,7 +68,7 @@ class CollectionViewController: UIViewController, SFSafariViewControllerDelegate
 
     func configureMyCollectionViewCell() {
         let itemSpace: Double = 5
-        let columnCount: Double = 2
+        let columnCount: Double = 3
         let width = floor((UIScreen.main.bounds.width - itemSpace * (columnCount - 1)) / columnCount)
 
         collectionViewFlowLayout.itemSize = CGSize(width: width, height: width + 40)
@@ -79,10 +79,10 @@ class CollectionViewController: UIViewController, SFSafariViewControllerDelegate
 
 
     func configureSecondCollectionViewCell () {
-        let itemSpace: Double = 3
-        let columnCount: Double = 1
+        let itemSpace  : Double = 3
+        let columnCount: Double = 3
         let width = floor((UIScreen.main.bounds.width - itemSpace * (columnCount - 1)) / columnCount)
-        secondCollectionViewFlowLayout.itemSize = CGSize(width: width, height: width)
+        secondCollectionViewFlowLayout.itemSize = CGSize(width: width, height: width + 30)
         secondCollectionViewFlowLayout.estimatedItemSize = .zero
         secondCollectionViewFlowLayout.minimumLineSpacing = itemSpace
         secondCollectionViewFlowLayout.minimumInteritemSpacing = itemSpace
@@ -135,7 +135,6 @@ extension CollectionViewController: UICollectionViewDataSource {
                 }
                 secondCell.locationNameLabel.text = taiwanStateData[indexPath.row].cityName
                 secondCell.imageView.image = secondImage
-                secondCell.backgroundColor = .red
                 return secondCell
             } else {
                 fatalError("Unhandled collection view")

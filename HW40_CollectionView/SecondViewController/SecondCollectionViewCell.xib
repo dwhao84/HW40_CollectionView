@@ -24,10 +24,6 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVM-P8-bgI">
                         <rect key="frame" x="51" y="160" width="48" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="JKz-xP-9Ro"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="nIJ-d0-Ufg"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -38,10 +34,9 @@
             <constraints>
                 <constraint firstItem="JcH-0s-M4U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3Zs-3p-BoW"/>
                 <constraint firstItem="JcH-0s-M4U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="72M-JZ-gmx"/>
-                <constraint firstItem="YVM-P8-bgI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="51" id="GyE-9N-uHr"/>
-                <constraint firstAttribute="trailing" secondItem="YVM-P8-bgI" secondAttribute="trailing" constant="51" id="Tew-P0-CTz"/>
                 <constraint firstItem="YVM-P8-bgI" firstAttribute="top" secondItem="JcH-0s-M4U" secondAttribute="bottom" constant="10" id="XLQ-u7-VlH"/>
                 <constraint firstAttribute="trailing" secondItem="JcH-0s-M4U" secondAttribute="trailing" id="hKp-r6-NbL"/>
+                <constraint firstItem="YVM-P8-bgI" firstAttribute="centerX" secondItem="JcH-0s-M4U" secondAttribute="centerX" id="m2J-gx-Xg4"/>
                 <constraint firstItem="JcH-0s-M4U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sCa-3o-HPa"/>
             </constraints>
             <size key="customSize" width="212" height="259"/>
@@ -49,7 +44,7 @@
                 <outlet property="imageView" destination="JcH-0s-M4U" id="dr2-v1-Qnl"/>
                 <outlet property="locationNameLabel" destination="YVM-P8-bgI" id="WIi-4B-rnl"/>
             </connections>
-            <point key="canvasLocation" x="182" y="49"/>
+            <point key="canvasLocation" x="181.67938931297709" y="48.591549295774648"/>
         </collectionViewCell>
     </objects>
     <resources>
