@@ -20,6 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="qOP-yS-GGG" secondAttribute="height" multiplier="100:100" id="K0v-qC-psQ"/>
+                            <constraint firstAttribute="width" secondItem="qOP-yS-GGG" secondAttribute="height" multiplier="1:1" id="qnq-iE-20R"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maJ-ro-h2m">
@@ -34,7 +35,10 @@
             <constraints>
                 <constraint firstItem="maJ-ro-h2m" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="2Hu-my-K8O"/>
                 <constraint firstItem="maJ-ro-h2m" firstAttribute="top" secondItem="qOP-yS-GGG" secondAttribute="bottom" constant="14" id="4sQ-EF-PoS"/>
+                <constraint firstItem="maJ-ro-h2m" firstAttribute="top" secondItem="qOP-yS-GGG" secondAttribute="bottom" constant="14" id="FJt-3U-L3i"/>
                 <constraint firstItem="qOP-yS-GGG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HfY-5q-vdj"/>
+                <constraint firstItem="qOP-yS-GGG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WSl-dG-Mwr"/>
+                <constraint firstItem="maJ-ro-h2m" firstAttribute="top" secondItem="qOP-yS-GGG" secondAttribute="bottom" constant="14" id="b9E-O9-t7C"/>
                 <constraint firstAttribute="trailing" secondItem="qOP-yS-GGG" secondAttribute="trailing" id="f0q-ot-4Lq"/>
                 <constraint firstItem="qOP-yS-GGG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tQW-vN-Lom"/>
             </constraints>

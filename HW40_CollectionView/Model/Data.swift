@@ -54,3 +54,93 @@ struct Location {
        Location(location: "Yehliu Geopark 野柳",
                 locationURL: "https://eng-taiwan-net-tw.translate.goog/m1.aspx?sNo=0002091&id=155&_x_tr_sl=en&_x_tr_tl=zh-Hant&_x")
     ]
+
+
+struct TaiwanState {
+    let cityName: String
+}
+
+let taiwanStateData = [
+    // Special municipality
+    TaiwanState(cityName: "Kaohsiung"),
+    TaiwanState(cityName: "Taipei"),
+    TaiwanState(cityName: "New Taipei City"),
+    TaiwanState(cityName: "Tainan"),
+    TaiwanState(cityName: "Taoyuan"),
+    TaiwanState(cityName: "Taichung"),
+    // city
+    TaiwanState(cityName: "Keelung"),
+    TaiwanState(cityName: "Chiayi"),
+    TaiwanState(cityName: "Hsinchu"),
+    // county-administered city
+    TaiwanState(cityName: "Changhua"),
+    TaiwanState(cityName: "Douliu"),
+    TaiwanState(cityName: "Hualien"),
+    TaiwanState(cityName: "Magong"),
+    TaiwanState(cityName: "Miaoli"),
+    TaiwanState(cityName: "Nantou"),
+    TaiwanState(cityName: "Pingtung"),
+    TaiwanState(cityName: "Puzi"),
+    TaiwanState(cityName: "Taibao"),
+    TaiwanState(cityName: "Taitung"),
+    TaiwanState(cityName: "Toufen"),
+    TaiwanState(cityName: "Yilan"),
+    TaiwanState(cityName: "Yuanlin"),
+    TaiwanState(cityName: "Zhubei")
+]
+
+//// Special municipality
+//let kaohsiung     = "Kaohsiung"
+//let taipei        = "Taipei"
+//let newTaipeiCity = "newTaipeiCity"
+//let tainan        = "Tainan"
+//let taoyuan       = "Taoyuan"
+//let taichung      = "Taichung"
+//
+//// city
+//let keelung       = "Keelung"
+//let chiayi        = "Chiayi"
+//
+//// county-administered city
+//let changhua  = "Changhua"
+//let douliu    = "Douliu"
+//let hualien   = "Hualien"
+//let magong    = "Magong"
+//let miaoli    = "Miaoli"
+//let nantou    = "Nantou"
+//let pingtung  = "Pingtung"
+//let puzi      = "Puzi"
+//let taibao    = "Taibao"
+//let taitung   = "Taitung"
+//let toufen    = "Toufen"
+//let yilan     = "Yilan"
+//let yuanlin   = "Yuanlin"
+//let zhubei    = "Zhubei"
+
+// Special municipality
+let kaohsiung     = "taiwan"
+let taipei        = "taiwan"
+let newTaipeiCity = "taiwan"
+let tainan        = "taiwan"
+let taoyuan       = "taiwan"
+let taichung      = "taiwan"
+
+// city
+let keelung       = "taiwan"
+let chiayi        = "taiwan"
+
+// county-administered city
+let changhua  = "taiwan"
+let douliu    = "taiwan"
+let hualien   = "taiwan"
+let magong    = "taiwan"
+let miaoli    = "taiwan"
+let nantou    = "taiwan"
+let pingtung  = "taiwan"
+let puzi      = "taiwan"
+let taibao    = "taiwan"
+let taitung   = "taiwan"
+let toufen    = "taiwan"
+let yilan     = "taiwan"
+let yuanlin   = "taiwan"
+let zhubei    = "taiwan"

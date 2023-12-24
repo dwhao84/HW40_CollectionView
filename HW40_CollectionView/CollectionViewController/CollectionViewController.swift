@@ -11,23 +11,29 @@ import SafariServices
 class CollectionViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var secondCollectionView: UICollectionView!
+
+    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var secondCollectionViewFlowLayout: UICollectionViewFlowLayout!
+    
+
+
+    let secondImage: UIImage = UIImage(named: "taiwan")!
 
     private var images: [UIImage] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let itemSpace:   Double = 4
-        let columuCount: Double = 3
-        let layout = UICollectionViewFlowLayout()
-        let width = floor(collectionView.bounds.width - itemSpace * (columuCount - 1) / columuCount )
-        layout.itemSize                = CGSize(width: width, height: width)
-
-        collectionView.collectionViewLayout = layout
+        // collectionView
         collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
-
         collectionView.delegate = self
         collectionView.dataSource = self
+
+        // secondCollectionView
+        secondCollectionView.register(SecondCollectionViewCell.secondNib(), forCellWithReuseIdentifier: SecondCollectionViewCell.identifier)
+        secondCollectionView.delegate   = self
+        secondCollectionView.dataSource = self
 
         self.navigationItem.title = "Taiwan Scene"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -55,7 +61,41 @@ class CollectionViewController: UIViewController, SFSafariViewControllerDelegate
             images.append(UIImage(named: "pic20")!)
             images.append(UIImage(named: "pic21")!)
         }
+
+        configureMyCollectionViewCell()
+        configureSecondCollectionViewCell()
     }
+
+    func configureMyCollectionViewCell() {
+        let itemSpace: Double = 4
+        let columnCount: Double = 3
+        let width = floor((UIScreen.main.bounds.width - itemSpace * (columnCount - 1)) / columnCount)
+
+        // Ensure collectionViewFlowLayout is initialized
+        if let layout = collectionViewFlowLayout {
+            layout.itemSize = CGSize(width: width, height: width)
+            layout.estimatedItemSize = .zero
+            layout.minimumLineSpacing = itemSpace
+            layout.minimumInteritemSpacing = itemSpace
+        } else {
+            print("collectionViewFlowLayout is nil")
+            // Handle the case where collectionViewFlowLayout is nil
+            // For example, you might need to initialize it here
+        }
+    }
+
+
+    func configureSecondCollectionViewCell () {
+        let itemSpace: Double = 3
+        let columnCount: Double = 1
+        let width = floor((UIScreen.main.bounds.width - itemSpace * (columnCount - 1)) / columnCount)
+        secondCollectionViewFlowLayout.itemSize = CGSize(width: width, height: width)
+        secondCollectionViewFlowLayout.estimatedItemSize = .zero
+        secondCollectionViewFlowLayout.minimumLineSpacing = itemSpace
+        secondCollectionViewFlowLayout.minimumInteritemSpacing = itemSpace
+    }
+
+
 }
 
 extension CollectionViewController: UICollectionViewDelegate {
@@ -74,41 +114,39 @@ extension CollectionViewController: UICollectionViewDelegate {
 
 extension CollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (collectionView == secondCollectionView) {
+            print("Load secondCollectionViewCell success")
+            return 10
+        }
+        print("Load myCollectionViewCell success")
         return 21
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let image = self.images[indexPath.row]
 
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as? MyCollectionViewCell else {
-            fatalError("Failed to dequeue MyCollectionViewCell")
+            if collectionView === self.collectionView {
+
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as? MyCollectionViewCell else {
+                    fatalError("Failed to dequeue MyCollectionViewCell")
+                }
+                cell.configure(with: image)
+                cell.locationName.text = placesAndUrl[indexPath.row].location
+                print(placesAndUrl[indexPath.row].location)
+                return cell
+
+            } else if collectionView === self.secondCollectionView {
+
+                guard let secondCell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondCollectionViewCell.identifier, for: indexPath) as? SecondCollectionViewCell else {
+                    fatalError("Failed to dequeue SecondCollectionViewCell")
+                }
+                secondCell.locationNameLabel.text = taiwanStateData[indexPath.row].cityName
+                secondCell.imageView.image = secondImage
+                secondCell.backgroundColor = .red
+                return secondCell
+            } else {
+                fatalError("Unhandled collection view")
+            }
         }
 
-        let image = self.images[indexPath.row]
-        cell.configure(with: image)
-        cell.locationName.text = placesAndUrl[indexPath.row].location
-
-        print(placesAndUrl[indexPath.row].location)
-        return cell
-    }
-}
-
-extension CollectionViewController: UICollectionViewDelegateFlowLayout {
-    // sizeForItemAt
-    // This means how many item will show in collectionView.
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // 1.34 this value means to minus the space after we divide the three images space.
-        let widthSize = (self.view.frame.width / 3) - 1.4
-        let heightSize = (self.view.frame.height / 5)
-        return CGSize(width: widthSize, height: heightSize)
-    }
-
-    // vertical spacing
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
-    }
-
-    // horizontal spacing
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
-    }
 }
