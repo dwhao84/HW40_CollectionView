@@ -25,11 +25,13 @@ class CollectionViewController: UIViewController, SFSafariViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    // MARK: - Import collectionView & register
         // collectionView
         collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
 
+    // MARK: - Import secondCollectionView & register
         // secondCollectionView
         secondCollectionView.register(SecondCollectionViewCell.secondNib(), forCellWithReuseIdentifier: SecondCollectionViewCell.identifier)
         secondCollectionView.delegate   = self
@@ -66,6 +68,8 @@ class CollectionViewController: UIViewController, SFSafariViewControllerDelegate
         configureSecondCollectionViewCell()
     }
 
+    // MARK: - collectionViewFlowLayout
+    // MyCollectionViewCell
     func configureMyCollectionViewCell() {
         let itemSpace: Double = 5
         let columnCount: Double = 3
@@ -76,8 +80,8 @@ class CollectionViewController: UIViewController, SFSafariViewControllerDelegate
         collectionViewFlowLayout.minimumLineSpacing = itemSpace
         collectionViewFlowLayout.minimumInteritemSpacing = itemSpace
     }
-
-
+    // MARK: - secondCollectionViewFlowLayout
+    // SecondCollectionViewCell
     func configureSecondCollectionViewCell () {
         let itemSpace  : Double = 3
         let columnCount: Double = 3
@@ -87,10 +91,8 @@ class CollectionViewController: UIViewController, SFSafariViewControllerDelegate
         secondCollectionViewFlowLayout.minimumLineSpacing = itemSpace
         secondCollectionViewFlowLayout.minimumInteritemSpacing = itemSpace
     }
-
-
 }
-
+// MARK: - UICollectionViewDelegate
 extension CollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
@@ -105,6 +107,7 @@ extension CollectionViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension CollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == secondCollectionView) {
@@ -127,7 +130,6 @@ extension CollectionViewController: UICollectionViewDataSource {
                 cell.locationName.text = placesAndUrl[indexPath.row].location
                 print(placesAndUrl[indexPath.row].location)
                 return cell
-
             } else if collectionView === self.secondCollectionView {
 
                 guard let secondCell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondCollectionViewCell.identifier, for: indexPath) as? SecondCollectionViewCell else {
