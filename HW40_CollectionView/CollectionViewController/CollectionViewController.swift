@@ -67,21 +67,14 @@ class CollectionViewController: UIViewController, SFSafariViewControllerDelegate
     }
 
     func configureMyCollectionViewCell() {
-        let itemSpace: Double = 4
-        let columnCount: Double = 3
+        let itemSpace: Double = 5
+        let columnCount: Double = 2
         let width = floor((UIScreen.main.bounds.width - itemSpace * (columnCount - 1)) / columnCount)
 
-        // Ensure collectionViewFlowLayout is initialized
-        if let layout = collectionViewFlowLayout {
-            layout.itemSize = CGSize(width: width, height: width)
-            layout.estimatedItemSize = .zero
-            layout.minimumLineSpacing = itemSpace
-            layout.minimumInteritemSpacing = itemSpace
-        } else {
-            print("collectionViewFlowLayout is nil")
-            // Handle the case where collectionViewFlowLayout is nil
-            // For example, you might need to initialize it here
-        }
+        collectionViewFlowLayout.itemSize = CGSize(width: width, height: width + 40)
+        collectionViewFlowLayout.estimatedItemSize = .zero
+        collectionViewFlowLayout.minimumLineSpacing = itemSpace
+        collectionViewFlowLayout.minimumInteritemSpacing = itemSpace
     }
 
 
