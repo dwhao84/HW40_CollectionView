@@ -1,10 +1,4 @@
 ##  HW40-CollectionView - Storyboard
-
-#### Here is the Demo Links below:
-
-> Note: The demo will show in my personal youtube.
-
-
 * Here is the Article Links below:
 
 > Note: Basically all the detail information will be show in Medium.
