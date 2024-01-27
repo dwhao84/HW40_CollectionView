@@ -4,8 +4,6 @@
 
 > Note: The demo will show in my personal youtube.
 
-* iPhone 15 Plus
-// my links
 
 * Here is the Article Links below:
 
